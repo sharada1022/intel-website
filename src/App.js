@@ -7,62 +7,99 @@ import {Form,Row,Col} from 'react-bootstrap'
 
 function App() {
   return (
+    <Container>
     <div className="App">
-      <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
-  <Container>
+      <Navbar className = "mb-4" collapseOnSelect expand="lg" bg="primary" variant="dark">
+      <Container>
   <Navbar.Brand href="#home">Intel</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="#features">Rambo</Nav.Link>
-      <Nav.Link href="#pricing">Ops Tools</Nav.Link>
-      <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+      <Nav.Link href="#features">Rambo</Nav.Link>  
+    </Nav>
+    <Nav>
+    <NavDropdown title="Ops Tools" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
-    </Nav>
-    <Nav>
-      <Nav.Link href="#deets">More deets</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        Dank memes
-      </Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
+
+      <NavDropdown title="Infra Management" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+      </NavDropdown>
+
+      <NavDropdown title="Server Tools" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+      </NavDropdown>
+
+      <NavDropdown title="Docs" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+      </NavDropdown>
+    </Nav>   
+  </Navbar.Collapse>  
   </Container>
 </Navbar>
-<Nav variant="tabs" defaultActiveKey="/home">
+<div>
+<Container>
+<Row>
+ <h1 className = "mb-5">Row/Rack Management</h1>
+ </Row>
+ </Container>
+ </div>
+<Nav className = "mb-5" variant="tabs" defaultActiveKey="/home">
   <Nav.Item>
     <Nav.Link href="/home">View Data</Nav.Link>
   </Nav.Item>
   <Nav.Item>
     <Nav.Link eventKey="link-1">Edit Data</Nav.Link>
-  </Nav.Item>
+  </Nav.Item> 
 </Nav>
- {/* here should be the title */}
- <h1>Hello World!</h1>
+<div className = "mb-0.2">
+ <p>All fields optional</p>
+ </div>
+ <Container>
 <Form>
-  <Row>
-    <Col>
-      <Form.Control placeholder="First name" />
+<div> 
+  <Row className = "mb-3"> 
+    <Col xs={3}>
+      <Form.Label>Building</Form.Label>
+      <Form.Control  className = "mb-3" placeholder="fm1" />
       <Col>
-      <Form.Control placeholder="First name" />
+      <Form.Label>Switch</Form.Label>
+      <Form.Control placeholder="fm11d-zas7e" />
       </Col>
     </Col>
-    <Col>
-      <Form.Control placeholder="Last name" />
-      <Form.Control placeholder="Last name" />
+    <Col xs={2}>
+      <Form.Label>Row</Form.Label>
+      <Form.Control className = "mb-3" placeholder="CP" />
+      <Form.Label>Rack</Form.Label>
+      <Form.Control placeholder="12" />
     </Col>
   </Row>
-  <Button variant="primary" type="submit">
+  <div  className ="d-grid gap-2"> 
+  <Button  variant="primary" size="md">
     Search
   </Button>
- 
+</div>
+  </div> 
 </Form>
-
+</Container>
     </div>
+    </Container>
   );      
 }
 
