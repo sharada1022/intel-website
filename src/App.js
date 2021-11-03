@@ -7,7 +7,6 @@ import {Form,Row,Col} from 'react-bootstrap'
 
 function App() {
   return (
-    <Container>
     <div className="App">
       <Navbar className = "mb-4" collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Container>
@@ -25,7 +24,6 @@ function App() {
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
-
       <NavDropdown title="Infra Management" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -33,7 +31,6 @@ function App() {
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
-
       <NavDropdown title="Server Tools" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -41,7 +38,6 @@ function App() {
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
-
       <NavDropdown title="Docs" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -53,13 +49,15 @@ function App() {
   </Navbar.Collapse>  
   </Container>
 </Navbar>
-<div>
-<Container>
-<Row>
- <h1 className = "mb-5">Row/Rack Management</h1>
+<div className = "" >
+<Container>  
+<Row >
+ <h1 className = "mb-5 test-header">Row/Rack Management</h1>
+ <hr />
  </Row>
  </Container>
  </div>
+ <Container>
 <Nav className = "mb-5" variant="tabs" defaultActiveKey="/home">
   <Nav.Item>
     <Nav.Link href="/home">View Data</Nav.Link>
@@ -68,38 +66,50 @@ function App() {
     <Nav.Link eventKey="link-1">Edit Data</Nav.Link>
   </Nav.Item> 
 </Nav>
-<div className = "mb-0.2">
+</Container>
+<div className = "mb-0.2" >
  <p>All fields optional</p>
  </div>
  <Container>
 <Form>
-<div> 
+<div > 
+  <Container>
   <Row className = "mb-3"> 
-    <Col xs={3}>
-      <Form.Label>Building</Form.Label>
+    <Col xs={7}>
+      <Form.Group  as={Row} className="mb-3">
+      <Form.Label column sm="4">Building</Form.Label>
+      <Col sm="8">
       <Form.Control  className = "mb-3" placeholder="fm1" />
-      <Col>
-      <Form.Label>Switch</Form.Label>
+      </Col>
+      </Form.Group> 
+      <Form.Group  as={Row} className="mb-3">
+      <Form.Label column sm="4">Switch</Form.Label>
+      <Col sm="8">
       <Form.Control placeholder="fm11d-zas7e" />
       </Col>
+      </Form.Group>
     </Col>
-    <Col xs={2}>
+    
+    
+    <Col xs={4}>
       <Form.Label>Row</Form.Label>
       <Form.Control className = "mb-3" placeholder="CP" />
       <Form.Label>Rack</Form.Label>
       <Form.Control placeholder="12" />
     </Col>
   </Row>
+  </Container>
   <div  className ="d-grid gap-2"> 
+  
   <Button  variant="primary" size="md">
     Search
   </Button>
 </div>
-  </div> 
+  </div>  
 </Form>
 </Container>
     </div>
-    </Container>
+    
   );      
 }
 
